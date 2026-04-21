@@ -91,14 +91,25 @@ Visualization Layer (Power BI Dashboard)
 git clone https://github.com/kevalrakholiya/Predictive_and_Prescriptive_Analytics_Engine.git
 cd Predictive_and_Prescriptive_Analytics_Engine
 
-2️⃣ Set Up Database
-Install PostgreSQL
-Create a new database
-Update connection credentials in ETL configuration
-3️⃣ Run ETL Pipelines
-Open Pentaho Data Integration (Spoon)
-Execute .ktr / .kjb files to load data into the warehouse
-4️⃣ Launch Dashboard
-Open Power BI file (.pbix)
-Connect to PostgreSQL database
-Refresh data to view insights
+---
+
+### 2️⃣ Set Up Database
+
+- Install **PostgreSQL**
+- Create a new database
+- Update connection credentials in ETL configuration
+
+---
+
+### 3️⃣ Run ETL Pipelines
+
+- Open **Pentaho Data Integration (Spoon)**
+- Execute `.ktr` or `.kjb` files to load data into the warehouse
+
+---
+
+### 4️⃣ Launch Dashboard
+
+- Open the Power BI file (`.pbix`)
+- Connect to the PostgreSQL database
+- Refresh data to view insights
