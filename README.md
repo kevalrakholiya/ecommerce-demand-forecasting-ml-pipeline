@@ -1,115 +1,115 @@
-# 🚀 Predictive & Prescriptive Analytics Engine  
-### Transforming Raw E-Commerce Data into Actionable Business Intelligence
+# Predictive and Prescriptive Analytics Engine for E-Commerce
+
+## Overview
+
+This project presents an end-to-end data engineering and analytics solution built on a Brazilian e-commerce dataset. It demonstrates how raw transactional data can be transformed into a structured data warehouse and leveraged for advanced analytics and business intelligence.
+
+The system integrates ETL pipelines, a PostgreSQL-based warehouse, and Power BI dashboards to support descriptive, predictive, and prescriptive analytics use cases. The primary goal is to enable data-driven decision-making by providing clean, reliable, and query-optimized data.
 
 ---
 
-## 📌 Overview
+## Data Source
 
-This project delivers a **full-scale data warehousing and analytics solution** designed to convert raw Brazilian e-commerce data into **high-impact business insights**.
+The dataset used in this project is publicly available:
 
-It integrates **ETL pipelines, a structured data warehouse, and advanced analytics layers** to enable organizations to move beyond reporting and into **data-driven decision-making and strategic optimization**.
+- Brazilian E-Commerce Public Dataset by Olist  
+  https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 
-The system is built to reflect how modern enterprises leverage **Data + AI for growth**, combining engineering, analytics, and visualization into a unified pipeline.
+### Steps to Download Data
 
----
-
-## 🎯 Objectives
-
-- Build an **end-to-end data pipeline** from raw ingestion to insights  
-- Enable **predictive and prescriptive analytics** on transactional data  
-- Design a **scalable data warehouse architecture**  
-- Deliver **interactive dashboards** for executive decision-making  
-- Reduce manual reporting and improve data reliability  
+1. Visit the dataset link above
+2. Download the dataset (ZIP format)
+3. Extract files into the `/data` directory of this repository
 
 ---
 
-## 🧠 Business Impact
-
-This solution is designed with real-world business outcomes in mind:
-
-- 📈 Identify revenue trends and growth opportunities  
-- 🛒 Optimize customer purchase behavior and retention  
-- 📊 Improve operational efficiency through data visibility  
-- 🔍 Enable forecasting and proactive decision-making  
-- ⚙️ Automate data workflows to reduce manual effort  
-
+## Project Structure
+Predictive_and_Prescriptive_Analytics_Engine/
+│
+├── data/ # Raw dataset files
+├── etl/ # Pentaho ETL jobs and transformations (.ktr, .kjb)
+├── sql/ # Schema creation and transformation scripts
+├── dashboards/ # Power BI (.pbix) file
+└── README.md
 ---
 
-## 🏗️ Architecture
+## Architecture
 Raw Data Sources
 ↓
-Data Ingestion (ETL Pipelines - Pentaho)
+ETL Pipelines (Pentaho Data Integration)
 ↓
-Data Cleaning & Transformation
+Data Cleaning and Transformation
 ↓
-Data Warehouse (PostgreSQL - Star Schema)
+PostgreSQL Data Warehouse (Star Schema)
 ↓
 Analytics Layer (SQL + Python)
 ↓
-Visualization Layer (Power BI Dashboard)
+Power BI Dashboard
 
 
 ---
 
-## ⚙️ Tech Stack
+## Data Warehouse Design
 
-- **Data Engineering:** Pentaho (ETL), SQL  
-- **Database:** PostgreSQL  
-- **Data Processing:** Python (Pandas, NumPy)  
-- **Analytics:** Descriptive, Predictive, Prescriptive Models  
-- **Visualization:** Power BI  
-- **Version Control:** Git & GitHub  
+The warehouse is modeled using a star schema to optimize analytical queries.
 
----
+### Fact Table
+- `fact_orders`  
+  Contains transactional metrics such as order value, timestamps, and delivery performance.
 
-## 🔄 Key Features
+### Dimension Tables
+- `dim_customers`
+- `dim_products`
+- `dim_sellers`
+- `dim_time`
+- `dim_geolocation`
 
-### 🔹 End-to-End ETL Pipeline
-- Automated extraction, transformation, and loading of large datasets  
-- Data cleaning and normalization for consistency  
-
-### 🔹 Scalable Data Warehouse
-- Designed using **star schema modeling**  
-- Optimized for analytical queries and performance  
-
-### 🔹 Advanced Analytics Engine
-- **Descriptive Analytics:** Historical performance insights  
-- **Predictive Analytics:** Trend forecasting  
-- **Prescriptive Analytics:** Actionable recommendations  
-
-### 🔹 Interactive Dashboard
-- Dynamic Power BI dashboards  
-- KPI tracking (Revenue, Orders, Customers, Retention)  
-- Drill-down capabilities for deeper insights  
+This design enables efficient aggregation and slicing across business dimensions.
 
 ---
 
-## 📥 Getting Started
+## ETL Pipeline
 
-### 1️⃣ Clone the Repository
+ETL pipelines are implemented using Pentaho Data Integration.
+
+### Key Responsibilities
+
+- Extract data from CSV files
+- Clean and standardize inconsistent records
+- Handle missing values and duplicates
+- Transform data into dimension and fact tables
+- Load processed data into PostgreSQL
+
+---
+
+## Getting Started
+
+### 1. Clone Repository
+
 ```bash
 git clone https://github.com/kevalrakholiya/Predictive_and_Prescriptive_Analytics_Engine.git
 cd Predictive_and_Prescriptive_Analytics_Engine
 ```
----
 
-### 2️⃣ Set Up Database
+## 2. Set Up Database
 
-- Install **PostgreSQL**
-- Create a new database
-- Update connection credentials in ETL configuration
+- Install PostgreSQL  
+- Create a new database  
 
----
+```sql
+CREATE DATABASE ecommerce_dw;
+```
+- Update database credentials inside ETL configuration files
 
-### 3️⃣ Run ETL Pipelines
+## 3. Run ETL Pipelines
+- Open Pentaho Data Integration (Spoon)
+- Load .ktr or .kjb files from /etl directory
+- Execute pipelines to populate the warehouse
+  
+## 4. Launch Dashboard
+- Open Power BI Desktop
+- Load .pbix file from /dashboards
+- Connect to PostgreSQL database
+- Refresh data
 
-- Open **Pentaho Data Integration (Spoon)**
-- Execute `.ktr` or `.kjb` files to load data into the warehouse
 
----
-
-### 4️⃣ Launch Dashboard
-
-- Open the Power BI file (`.pbix`)
-- Connect to the PostgreSQL database
-- Refresh data to view insights
