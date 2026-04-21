@@ -83,18 +83,17 @@ Predictive_and_Prescriptive_Analytics_Engine/
 └── README.md
 
 ## Architecture
-```mermaid
-graph TD
-    A[Raw Data Sources] --> B[ETL Pipelines: Pentaho Data Integration]
-    B --> C[Data Cleaning and Transformation]
-    C --> D[PostgreSQL Data Warehouse: Star Schema]
-    D --> E[Analytics Layer: SQL + Python]
-    E --> F[Power BI Dashboard]
-
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style D fill:#bbf,stroke:#333,stroke-width:2px
-    style F fill:#bfb,stroke:#333,stroke-width:2px
-
+Raw Data Sources
+↓
+ETL Pipelines (Pentaho Data Integration)
+↓
+Data Cleaning and Transformation
+↓
+PostgreSQL Data Warehouse (Star Schema)
+↓
+Analytics Layer (SQL + Python)
+↓
+Power BI Dashboard
 
 ---
 
