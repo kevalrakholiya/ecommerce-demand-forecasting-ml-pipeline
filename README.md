@@ -31,7 +31,6 @@ Predictive_and_Prescriptive_Analytics_Engine/
 ├── sql/ # Schema creation and transformation scripts
 ├── dashboards/ # Power BI (.pbix) file
 └── README.md
----
 
 ## Architecture
 Raw Data Sources
